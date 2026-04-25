@@ -15,17 +15,14 @@ from db_manager import (
 
 load_dotenv()
 
-# ─────────────────────────────────────────────
-# Routing tabela — redosled je bitan!
-# Specifičniji ključevi moraju biti pre opštih.
-# ─────────────────────────────────────────────
+# ── Routing tabela — specifičniji pre opštijih ──
 ROUTES = [
-    (["neplaćen", "neplacen", "dospel", "kasni"],        "neplacene_fakture"),
-    (["faktura", "efaktura", "fakture"],                  "fakture"),
-    (["fiksni trošak", "fiksni trosak", "fiksni"],        "fiksni_troskovi"),
+    (["neplaćen", "neplacen", "dospel", "kasni"],           "neplacene_fakture"),
+    (["faktura", "efaktura", "fakture"],                     "fakture"),
+    (["fiksni trošak", "fiksni trosak", "fiksni"],           "fiksni_troskovi"),
     (["plata", "plate", "zaposleni", "zaposlena", "sektor"], "zaposleni"),
     (["transakcij", "banka", "uplata", "isplata", "prihod", "rashod"], "transakcije"),
-    (["stanje", "račun", "racun", "balans", "saldo"],     "racun"),
+    (["stanje", "račun", "racun", "balans", "saldo"],        "racun"),
 ]
 
 
@@ -37,34 +34,31 @@ def _route(upit: str) -> str:
     return "opste"
 
 
-# ─────────────────────────────────────────────
-# Handler funkcije
-# ─────────────────────────────────────────────
+# ── Handleri ──
 
 def _handle_neplacene_fakture() -> str:
     fakture = get_neplacene_fakture()
     if not fakture:
         return "✅ Sve fakture su plaćene. Nema dospelih obaveza."
     linije = ["⚠️ **Neplaćene / dospele fakture:**\n"]
-    ukupno = 0
+    ukupno = 0.0
     for f in fakture:
-        iznos = f["invoiceAmount"]["taxInclusiveAmount"]["amount"]
+        iznos = float(f["invoiceAmount"]["payableAmount"])
         ukupno += iznos
         linije.append(
-            f"• **{f['seller']['name']}** — {iznos:,.2f} RSD "
+            f"• **{f['buyer']['name']}** — {iznos:,.2f} RSD "
             f"| Status: {f['status']} "
-            f"| Rok: {f['dueDate']}"
+            f"| Rok: {f['paymentDueDate']}"
         )
     linije.append(f"\n💰 Ukupno dugovanje: **{ukupno:,.2f} RSD**")
     return "\n".join(linije)
 
 
 def _handle_fakture() -> str:
-    data = get_efakture()
-    fakture = data["data"]["invoices"]
-    placene = sum(1 for f in fakture if f["status"] == "Approved")
+    fakture = get_efakture()["data"]["invoices"]
+    placene  = sum(1 for f in fakture if f["status"] == "Approved")
     neplacene = len(fakture) - placene
-    ukupno = sum(f["invoiceAmount"]["taxInclusiveAmount"]["amount"] for f in fakture)
+    ukupno   = sum(float(f["invoiceAmount"]["payableAmount"]) for f in fakture)
     return (
         f"📄 **Pregled eFaktura**\n\n"
         f"• Ukupno faktura: {len(fakture)}\n"
@@ -77,8 +71,8 @@ def _handle_fakture() -> str:
 
 def _handle_fiksni_troskovi() -> str:
     mesecni = get_mesecni_fiksni_troskovi()
-    po_kat = get_fiksni_troskovi_po_kategoriji()
-    linije = [f"🏢 **Fiksni troškovi — mesečno: {mesecni:,.2f} RSD**\n"]
+    po_kat  = get_fiksni_troskovi_po_kategoriji()
+    linije  = [f"🏢 **Fiksni troškovi — mesečno: {mesecni:,.2f} RSD**\n"]
     linije.append("Po kategoriji:")
     for kat, iznos in po_kat:
         linije.append(f"  • {kat}: {iznos:,.2f} RSD")
@@ -86,9 +80,9 @@ def _handle_fiksni_troskovi() -> str:
 
 
 def _handle_zaposleni() -> str:
-    masa = get_ukupna_masa_plata()
+    masa      = get_ukupna_masa_plata()
     po_sektoru = get_zaposleni_po_sektoru()
-    linije = [f"👥 **Masa plata — mesečno: {masa:,.2f} RSD**\n"]
+    linije    = [f"👥 **Masa plata — mesečno: {masa:,.2f} RSD**\n"]
     linije.append("Zaposleni po sektoru:")
     for sektor, broj, ukupno in po_sektoru:
         linije.append(f"  • {sektor}: {broj} zaposlenih | {ukupno:,.2f} RSD")
@@ -97,16 +91,8 @@ def _handle_zaposleni() -> str:
 
 def _handle_transakcije() -> str:
     transakcije = get_booked_transactions()
-    prihodi = sum(
-        t["transactionAmount"]["amount"]
-        for t in transakcije
-        if t["transactionAmount"]["amount"] > 0
-    )
-    rashodi = sum(
-        t["transactionAmount"]["amount"]
-        for t in transakcije
-        if t["transactionAmount"]["amount"] < 0
-    )
+    prihodi = sum(float(t["transactionAmount"]["amount"]) for t in transakcije if float(t["transactionAmount"]["amount"]) > 0)
+    rashodi = sum(float(t["transactionAmount"]["amount"]) for t in transakcije if float(t["transactionAmount"]["amount"]) < 0)
     return (
         f"🏦 **Bankovne transakcije (poslednja 3 meseca)**\n\n"
         f"• Broj transakcija: {len(transakcije)}\n"
@@ -118,33 +104,31 @@ def _handle_transakcije() -> str:
 
 def _handle_racun() -> str:
     data = get_account()
-    acc = data["data"]["account"]
-    bal = data["data"]["balances"][0]["balanceAmount"]
+    acc  = data["data"]["account"]
+    bal  = data["data"]["balances"][0]["balanceAmount"]
     return (
         f"💳 **Stanje računa**\n\n"
         f"• IBAN: `{acc['iban']}`\n"
         f"• Tip: {acc['cashAccountType']}\n"
         f"• Status: {acc['status']}\n"
-        f"• Trenutno stanje: **{bal['amount']:,.2f} {bal['currency']}**"
+        f"• Trenutno stanje: **{float(bal['amount']):,.2f} {bal['currency']}**"
     )
 
 
 def _handle_opste(upit: str) -> str:
     return (
-        f"🤖 Mogu da ti pomognem sa sledećim pitanjima:\n\n"
-        f"• **Stanje računa** — trenutni saldo\n"
-        f"• **Transakcije** — prihodi i rashodi iz banke\n"
-        f"• **Fakture** — pregled svih eFaktura\n"
-        f"• **Neplaćene fakture** — upozorenja i dugovanja\n"
-        f"• **Fiksni troškovi** — mesečne obaveze po kategoriji\n"
-        f"• **Zaposleni / plate** — masa plata po sektoru\n\n"
-        f"Probaj neko od ovih pitanja!"
+        "🤖 Mogu da ti pomognem sa sledećim pitanjima:\n\n"
+        "• **Stanje računa** — trenutni saldo\n"
+        "• **Transakcije** — prihodi i rashodi iz banke\n"
+        "• **Fakture** — pregled svih eFaktura\n"
+        "• **Neplaćene fakture** — upozorenja i dugovanja\n"
+        "• **Fiksni troškovi** — mesečne obaveze po kategoriji\n"
+        "• **Zaposleni / plate** — masa plata po sektoru\n\n"
+        "Probaj neko od ovih pitanja!"
     )
 
 
-# ─────────────────────────────────────────────
-# Glavni entry point
-# ─────────────────────────────────────────────
+# ── Entry point ──
 
 def odgovori(upit: str) -> str:
     ruta = _route(upit)
@@ -160,9 +144,6 @@ def odgovori(upit: str) -> str:
     return handlers[ruta]()
 
 
-# ─────────────────────────────────────────────
-# Brzi test
-# ─────────────────────────────────────────────
 if __name__ == "__main__":
     test_upiti = [
         "Kakvo je stanje na računu?",
