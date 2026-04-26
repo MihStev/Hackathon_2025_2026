@@ -1,4 +1,4 @@
-# 💼 FinStat Ai
+# 💼 FinStat AI
 
 > **AI-powered financial management platform for small and medium-sized enterprises (SMEs)**
 
