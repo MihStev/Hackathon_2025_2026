@@ -7,3 +7,10 @@ db/*.db-wal
 data/*.json
 .env
 venv/
+
+db/*.db
+db/*.db-shm
+db/*.db-wal
+data/*.json
+__pycache__/
+venv/
