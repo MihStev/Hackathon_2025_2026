@@ -1,0 +1,94 @@
+/* Custom CSS za moderni SaaS dizajn */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar je uvek vidljiv - može se promeniti njegova širina */
+
+/* Kartice sa zaobljenim ivicama i box-shadow */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+}
+
+/* KPI kartice */
+.kpi-card {
+    text-align: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+}
+
+.kpi-value {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Navigacioni dugmići */
+.nav-button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #e0e0e0;
+}
+
+.nav-button.active {
+    background-color: #667eea;
+    color: white;
+}
+
+/* Sticky bottom za chat input */
+.chat-input-container {
+    position: sticky;
+    bottom: 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* Vertikalna linija za desni panel */
+.right-panel {
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+/* Grafikoni sa transparentnom pozadinom */
+.plotly-graph-div {
+    background-color: transparent !important;
+}
+
+/* Tabele */
+.table-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 0;
+}
+
+/* Animacije */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
