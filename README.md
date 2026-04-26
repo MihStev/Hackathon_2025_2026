@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/2dcfd9ba-a9f5-407d-a6aa-c6a3e27e0a3d
+
 # 💼 FinStat AI
 
 > **AI-powered financial management platform for small and medium-sized enterprises (SMEs)**
