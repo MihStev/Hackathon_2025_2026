@@ -1,8 +1,8 @@
-# 💼 FinAssist.ai
+# 💼 FinStat Ai
 
 > **AI-powered financial management platform for small and medium-sized enterprises (SMEs)**
 
-FinAssist.ai combines a real-time analytics dashboard with an autonomous AI financial strategist powered by **Google Gemini 2.5 Flash**. Banking transactions, employee payroll, and tax obligations are unified in a single interface — queryable via natural language.
+FinStat AI combines a real-time analytics dashboard with an autonomous AI financial strategist powered by **Google Gemini 2.5 Flash**. Banking transactions, employee payroll, and tax obligations are unified in a single interface — queryable via natural language.
 
 ---
 
@@ -50,7 +50,7 @@ FinAssist.ai combines a real-time analytics dashboard with an autonomous AI fina
 ## 📁 Project Structure
 
 ```
-FinAssist.ai/
+FinStat AI/
 ├── src/
 │   ├── main.py          # Streamlit dashboard (UI entry point)
 │   ├── ai_agent.py      # Gemini agent setup and orchestration
