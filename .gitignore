@@ -1,16 +1,13 @@
-# Created by venv; see https://docs.python.org/3/library/venv.html
+# Python
+venv/
 __pycache__/
 *.py[cod]
-db/*.db
-db/*.db-shm
-db/*.db-wal
-data/*.json
-.env
-venv/
 
+# Database & Data
 db/*.db
 db/*.db-shm
 db/*.db-wal
 data/*.json
-__pycache__/
-venv/
+
+# Env
+.env
