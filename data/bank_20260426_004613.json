@@ -1,0 +1,96 @@
+{
+  "snapshot": {
+    "data": {
+      "account": {
+        "resourceId": "c9c223a0-1234-5678-90ab-cdef12345678",
+        "currency": "RSD",
+        "cashAccountType": "Checking",
+        "status": "enabled",
+        "bic": "DBSSDEFF",
+        "iban": "RS35160000000012345678",
+        "name": "Petar Petrovic",
+        "product": "Tekući račun"
+      },
+      "balances": [
+        {
+          "balanceType": "expected",
+          "balanceAmount": {
+            "currency": "RSD",
+            "amount": 917764.84
+          },
+          "lastChangeDateTime": "2026-04-26T00:46:13Z",
+          "referenceDate": "2026-04-26"
+        },
+        {
+          "balanceType": "interimAvailable",
+          "balanceAmount": {
+            "currency": "RSD",
+            "amount": 915521.36
+          },
+          "lastChangeDateTime": "2026-04-26T00:46:13Z"
+        }
+      ]
+    },
+    "links": {
+      "self": {
+        "href": "/v1/accounts/c9c223a0-1234-5678-90ab-cdef12345678/balances"
+      },
+      "account": {
+        "href": "/v1/accounts/c9c223a0-1234-5678-90ab-cdef12345678"
+      }
+    },
+    "meta": {
+      "totalResults": 2,
+      "timestamp": "2026-04-26T00:46:13Z",
+      "numTransactionsInPeriod": 3
+    }
+  },
+  "transactions": [
+    {
+      "transactionId": "9e42bc07-17d1-4e48-a979-6560a0bc757b",
+      "bookingDate": "2026-04-26",
+      "valueDate": "2026-04-27",
+      "transactionAmount": {
+        "currency": "RSD",
+        "amount": -2535.84
+      },
+      "creditorName": "Telekom - Mobilni",
+      "debtorName": null,
+      "remittanceInformationUnstructured": "Telekom - Mobilni",
+      "bankTransactionCode": "DEBIT",
+      "category": "utilities",
+      "proprietaryBankTransactionCode": "DEB852"
+    },
+    {
+      "transactionId": "ac5ab6f4-8f78-4f77-9321-829704a3c605",
+      "bookingDate": "2026-04-26",
+      "valueDate": "2026-04-26",
+      "transactionAmount": {
+        "currency": "RSD",
+        "amount": -3122.58
+      },
+      "creditorName": "Lidl - Namirnice",
+      "debtorName": null,
+      "remittanceInformationUnstructured": "Lidl - Namirnice",
+      "bankTransactionCode": "DEBIT",
+      "category": "groceries",
+      "proprietaryBankTransactionCode": "DEB938"
+    },
+    {
+      "transactionId": "21cbc826-2f36-4cad-a419-9de0f17d145b",
+      "bookingDate": "2026-04-26",
+      "valueDate": "2026-04-27",
+      "transactionAmount": {
+        "currency": "RSD",
+        "amount": -6601.09
+      },
+      "creditorName": "EPS - Struja",
+      "debtorName": null,
+      "remittanceInformationUnstructured": "EPS - Struja",
+      "bankTransactionCode": "DEBIT",
+      "category": "utilities",
+      "proprietaryBankTransactionCode": "DEB901"
+    }
+  ],
+  "new_balance": 917764.84
+}

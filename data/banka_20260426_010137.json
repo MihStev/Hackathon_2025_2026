@@ -1,0 +1,96 @@
+{
+  "snimak": {
+    "podaci": {
+      "racun": {
+        "identifikator": "c9c223a0-1234-5678-90ab-cdef12345678",
+        "valuta": "RSD",
+        "vrstaRacuna": "Tekući račun",
+        "status": "aktivan",
+        "bic": "DBSSDEFF",
+        "iban": "RS35160000000012345678",
+        "imeTitulara": "Stefan Branković",
+        "proizvod": "Tekući račun - Standard"
+      },
+      "stanja": [
+        {
+          "vrstaStanja": "ocekivano",
+          "iznos": {
+            "valuta": "RSD",
+            "vrednost": 285794.93
+          },
+          "datumPromene": "2026-04-26T01:01:37Z",
+          "referentniDatum": "2026-04-26"
+        },
+        {
+          "vrstaStanja": "raspolozivo",
+          "iznos": {
+            "valuta": "RSD",
+            "vrednost": 285483.94
+          },
+          "datumPromene": "2026-04-26T01:01:37Z"
+        }
+      ]
+    },
+    "veze": {
+      "ovaj": {
+        "putanja": "/v1/racuni/c9c223a0-1234-5678-90ab-cdef12345678/stanja"
+      },
+      "racun": {
+        "putanja": "/v1/racuni/c9c223a0-1234-5678-90ab-cdef12345678"
+      }
+    },
+    "meta": {
+      "ukupnoRezultata": 2,
+      "vremenskaOznaka": "2026-04-26T01:01:37Z",
+      "brojTransakcijaUPeriodu": 3
+    }
+  },
+  "transakcije": [
+    {
+      "identifikatorTransakcije": "27fca877-0b18-4ab1-9e01-a7daba65aa10",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -3548.94
+      },
+      "nazivPoverioca": "Wiener Städtische — polisa osiguranja",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "Wiener Städtische — polisa osiguranja",
+      "kodTransakcije": "ZAD",
+      "kategorija": "osiguranje",
+      "interniKod": "ZAD935"
+    },
+    {
+      "identifikatorTransakcije": "8ec44ad9-9782-4c0e-82a8-7491ed686e60",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -4464.33
+      },
+      "nazivPoverioca": "EPS — električna energija",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "EPS — električna energija",
+      "kodTransakcije": "ZAD",
+      "kategorija": "rezije",
+      "interniKod": "ZAD885"
+    },
+    {
+      "identifikatorTransakcije": "970f5e38-3dc0-4a5e-867e-5fd5925e47e3",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -1939.66
+      },
+      "nazivPoverioca": "Telekom — mobilna telefonija",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "Telekom — mobilna telefonija",
+      "kodTransakcije": "ZAD",
+      "kategorija": "rezije",
+      "interniKod": "ZAD700"
+    }
+  ],
+  "novo_stanje": 285794.93
+}

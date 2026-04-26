@@ -1,0 +1,96 @@
+{
+  "snimak": {
+    "podaci": {
+      "racun": {
+        "identifikator": "c9c223a0-1234-5678-90ab-cdef12345678",
+        "valuta": "RSD",
+        "vrstaRacuna": "Tekući račun",
+        "status": "aktivan",
+        "bic": "DBSSDEFF",
+        "iban": "RS35160000000012345678",
+        "imeTitulara": "Stefan Branković",
+        "proizvod": "Tekući račun - Standard"
+      },
+      "stanja": [
+        {
+          "vrstaStanja": "ocekivano",
+          "iznos": {
+            "valuta": "RSD",
+            "vrednost": 84587.76
+          },
+          "datumPromene": "2026-04-26T00:51:37Z",
+          "referentniDatum": "2026-04-26"
+        },
+        {
+          "vrstaStanja": "raspolozivo",
+          "iznos": {
+            "valuta": "RSD",
+            "vrednost": 79390.45
+          },
+          "datumPromene": "2026-04-26T00:51:37Z"
+        }
+      ]
+    },
+    "veze": {
+      "ovaj": {
+        "putanja": "/v1/racuni/c9c223a0-1234-5678-90ab-cdef12345678/stanja"
+      },
+      "racun": {
+        "putanja": "/v1/racuni/c9c223a0-1234-5678-90ab-cdef12345678"
+      }
+    },
+    "meta": {
+      "ukupnoRezultata": 2,
+      "vremenskaOznaka": "2026-04-26T00:51:37Z",
+      "brojTransakcijaUPeriodu": 3
+    }
+  },
+  "transakcije": [
+    {
+      "identifikatorTransakcije": "82f2122b-a2bd-47be-916d-3e93663c8e47",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -5453.88
+      },
+      "nazivPoverioca": "Udemy — online kurs",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "Udemy — online kurs",
+      "kodTransakcije": "ZAD",
+      "kategorija": "obrazovanje",
+      "interniKod": "ZAD946"
+    },
+    {
+      "identifikatorTransakcije": "34ce5a99-299f-43f7-a318-0e29616e27a6",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -3901.62
+      },
+      "nazivPoverioca": "BusPlus — mesečna karta",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "BusPlus — mesečna karta",
+      "kodTransakcije": "ZAD",
+      "kategorija": "prevoz",
+      "interniKod": "ZAD671"
+    },
+    {
+      "identifikatorTransakcije": "1310d5c5-dce4-4ce7-a741-0470ce530d9f",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -50562.62
+      },
+      "nazivPoverioca": "Kirija — stan Beograd",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "Kirija — stan Beograd",
+      "kodTransakcije": "ZAD",
+      "kategorija": "kirija",
+      "interniKod": "ZAD294"
+    }
+  ],
+  "novo_stanje": 84587.76
+}

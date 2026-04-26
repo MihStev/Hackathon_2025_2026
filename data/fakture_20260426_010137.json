@@ -1,0 +1,141 @@
+{
+  "fakture": [
+    {
+      "podaci": {
+        "faktura": {
+          "identifikatorFakture": "c4046b27-0d64-48a1-ab89-faf8a846c6ec",
+          "brojFakture": "F-2026-0005",
+          "datumIzdavanja": "2026-04-26",
+          "rokPlacanja": "2026-05-03",
+          "valuta": "RSD",
+          "status": "izdata",
+          "prodavac": {
+            "naziv": "Mnogo Jaka Firma DOO",
+            "pib": "101234567",
+            "mb": "12345678"
+          },
+          "kupac": {
+            "naziv": "Republika Srbija - MUP",
+            "pib": "108765432",
+            "mb": "11111111"
+          },
+          "stavkeFakture": [
+            {
+              "opis": "Monitor LG 27 inch",
+              "kategorija": "Oprema",
+              "jedinicaMere": "komad",
+              "kolicina": 2,
+              "cenaPoJedinici": 30125.56,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 60251.12,
+              "iznosPDV": 12050.22,
+              "ukupanIznos": 72301.34
+            }
+          ],
+          "rekapitulacija": {
+            "iznosOsnove": 60251.12,
+            "iznosPDV": 12050.22,
+            "ukupanIznos": 72301.34
+          },
+          "podaciOPlacanju": {
+            "iban": "RS355723504837903294477",
+            "model": "97",
+            "pozivNaBroj": "18-3807-63"
+          }
+        }
+      },
+      "meta": {
+        "identifikatorFakture": "61aa073b-77fb-47b5-8cbb-477d9418e25b",
+        "format": "UBL-2.1-Simplified",
+        "vremenskaOznaka": "2026-04-26T01:01:37Z",
+        "izvor": "mock_generator_v1"
+      }
+    },
+    {
+      "podaci": {
+        "faktura": {
+          "identifikatorFakture": "4012219b-97b1-404b-8c0c-a0551c41b82a",
+          "brojFakture": "F-2026-0006",
+          "datumIzdavanja": "2026-04-26",
+          "rokPlacanja": "2026-05-03",
+          "valuta": "RSD",
+          "status": "izdata",
+          "prodavac": {
+            "naziv": "Consulting Pro DOO",
+            "pib": "104567890",
+            "mb": "45678901"
+          },
+          "kupac": {
+            "naziv": "Telekom Srbija AD",
+            "pib": "110987654",
+            "mb": "33333333"
+          },
+          "stavkeFakture": [
+            {
+              "opis": "Web razvoj - Backend",
+              "kategorija": "IT",
+              "jedinicaMere": "usluga",
+              "kolicina": 1.0,
+              "cenaPoJedinici": 98666.44,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 98666.44,
+              "iznosPDV": 19733.29,
+              "ukupanIznos": 118399.73
+            },
+            {
+              "opis": "Fotografske usluge",
+              "kategorija": "Mediji",
+              "jedinicaMere": "usluga",
+              "kolicina": 1.0,
+              "cenaPoJedinici": 12838.42,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 12838.42,
+              "iznosPDV": 2567.68,
+              "ukupanIznos": 15406.1
+            },
+            {
+              "opis": "Grafički dizajn - Logo",
+              "kategorija": "Dizajn",
+              "jedinicaMere": "usluga",
+              "kolicina": 1.0,
+              "cenaPoJedinici": 15064.19,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 15064.19,
+              "iznosPDV": 3012.84,
+              "ukupanIznos": 18077.03
+            },
+            {
+              "opis": "Pravne usluge",
+              "kategorija": "Pravo",
+              "jedinicaMere": "sat",
+              "kolicina": 28.9,
+              "cenaPoJedinici": 22215.52,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 642028.53,
+              "iznosPDV": 128405.71,
+              "ukupanIznos": 770434.24
+            }
+          ],
+          "rekapitulacija": {
+            "iznosOsnove": 768597.58,
+            "iznosPDV": 153719.52,
+            "ukupanIznos": 922317.1
+          },
+          "podaciOPlacanju": {
+            "iban": "RS358709328682804722495",
+            "model": "97",
+            "pozivNaBroj": "58-3324-19"
+          }
+        }
+      },
+      "meta": {
+        "identifikatorFakture": "b2312017-355a-4662-971c-0ccf6e52d964",
+        "format": "UBL-2.1-Simplified",
+        "vremenskaOznaka": "2026-04-26T01:01:37Z",
+        "izvor": "mock_generator_v1"
+      }
+    }
+  ],
+  "ukupnoFaktura": 994618.44,
+  "broj": 2
+}

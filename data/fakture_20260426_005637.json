@@ -1,0 +1,119 @@
+{
+  "fakture": [
+    {
+      "podaci": {
+        "faktura": {
+          "identifikatorFakture": "cad9d98c-33a4-4e9d-afbf-380c29fb6751",
+          "brojFakture": "F-2026-0003",
+          "datumIzdavanja": "2026-04-26",
+          "rokPlacanja": "2026-05-03",
+          "valuta": "RSD",
+          "status": "izdata",
+          "prodavac": {
+            "naziv": "TechSolutions Serbia DOO",
+            "pib": "102345678",
+            "mb": "23456789"
+          },
+          "kupac": {
+            "naziv": "NIS Petrol AD",
+            "pib": "109876543",
+            "mb": "22222222"
+          },
+          "stavkeFakture": [
+            {
+              "opis": "Pravne usluge",
+              "kategorija": "Pravo",
+              "jedinicaMere": "sat",
+              "kolicina": 29.7,
+              "cenaPoJedinici": 48945.22,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 1453673.03,
+              "iznosPDV": 290734.61,
+              "ukupanIznos": 1744407.64
+            },
+            {
+              "opis": "Web razvoj - Frontend",
+              "kategorija": "IT",
+              "jedinicaMere": "usluga",
+              "kolicina": 1.0,
+              "cenaPoJedinici": 44059.22,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 44059.22,
+              "iznosPDV": 8811.84,
+              "ukupanIznos": 52871.06
+            }
+          ],
+          "rekapitulacija": {
+            "iznosOsnove": 1497732.25,
+            "iznosPDV": 299546.45,
+            "ukupanIznos": 1797278.7
+          },
+          "podaciOPlacanju": {
+            "iban": "RS358841084719211353048",
+            "model": "97",
+            "pozivNaBroj": "37-7791-21"
+          }
+        }
+      },
+      "meta": {
+        "identifikatorFakture": "cb61185a-c05a-42cb-aa50-4a32a47955ad",
+        "format": "UBL-2.1-Simplified",
+        "vremenskaOznaka": "2026-04-26T00:56:37Z",
+        "izvor": "mock_generator_v1"
+      }
+    },
+    {
+      "podaci": {
+        "faktura": {
+          "identifikatorFakture": "f4e631b8-b898-43c8-9a73-97fe11b1e16d",
+          "brojFakture": "F-2026-0004",
+          "datumIzdavanja": "2026-04-26",
+          "rokPlacanja": "2026-05-11",
+          "valuta": "RSD",
+          "status": "izdata",
+          "prodavac": {
+            "naziv": "Consulting Pro DOO",
+            "pib": "104567890",
+            "mb": "45678901"
+          },
+          "kupac": {
+            "naziv": "Banca Intesa AD",
+            "pib": "111098765",
+            "mb": "44444444"
+          },
+          "stavkeFakture": [
+            {
+              "opis": "Prevođenje dokumenata",
+              "kategorija": "Usluge",
+              "jedinicaMere": "strana",
+              "kolicina": 24.4,
+              "cenaPoJedinici": 3342.9,
+              "stopaPDV": 20.0,
+              "iznosOsnove": 81566.76,
+              "iznosPDV": 16313.35,
+              "ukupanIznos": 97880.11
+            }
+          ],
+          "rekapitulacija": {
+            "iznosOsnove": 81566.76,
+            "iznosPDV": 16313.35,
+            "ukupanIznos": 97880.11
+          },
+          "podaciOPlacanju": {
+            "iban": "RS356385613410823656387",
+            "model": "97",
+            "pozivNaBroj": "40-7058-35"
+          }
+        }
+      },
+      "meta": {
+        "identifikatorFakture": "edaea4ac-712e-453b-8068-abc972bd39c6",
+        "format": "UBL-2.1-Simplified",
+        "vremenskaOznaka": "2026-04-26T00:56:37Z",
+        "izvor": "mock_generator_v1"
+      }
+    }
+  ],
+  "ukupnoFaktura": 1895158.81,
+  "broj": 2
+}

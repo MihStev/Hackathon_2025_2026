@@ -1,0 +1,96 @@
+{
+  "snapshot": {
+    "data": {
+      "account": {
+        "resourceId": "c9c223a0-1234-5678-90ab-cdef12345678",
+        "currency": "RSD",
+        "cashAccountType": "Checking",
+        "status": "enabled",
+        "bic": "DBSSDEFF",
+        "iban": "RS35160000000012345678",
+        "name": "Petar Petrovic",
+        "product": "Tekući račun"
+      },
+      "balances": [
+        {
+          "balanceType": "expected",
+          "balanceAmount": {
+            "currency": "RSD",
+            "amount": 882544.31
+          },
+          "lastChangeDateTime": "2026-04-26T00:50:13Z",
+          "referenceDate": "2026-04-26"
+        },
+        {
+          "balanceType": "interimAvailable",
+          "balanceAmount": {
+            "currency": "RSD",
+            "amount": 870952.66
+          },
+          "lastChangeDateTime": "2026-04-26T00:50:13Z"
+        }
+      ]
+    },
+    "links": {
+      "self": {
+        "href": "/v1/accounts/c9c223a0-1234-5678-90ab-cdef12345678/balances"
+      },
+      "account": {
+        "href": "/v1/accounts/c9c223a0-1234-5678-90ab-cdef12345678"
+      }
+    },
+    "meta": {
+      "totalResults": 2,
+      "timestamp": "2026-04-26T00:50:13Z",
+      "numTransactionsInPeriod": 3
+    }
+  },
+  "transactions": [
+    {
+      "transactionId": "06336ec3-2b86-499f-9c10-be2ab84a69e4",
+      "bookingDate": "2026-04-26",
+      "valueDate": "2026-04-26",
+      "transactionAmount": {
+        "currency": "RSD",
+        "amount": -3237.66
+      },
+      "creditorName": "Steam - Igrica",
+      "debtorName": null,
+      "remittanceInformationUnstructured": "Steam - Igrica",
+      "bankTransactionCode": "DEBIT",
+      "category": "entertainment",
+      "proprietaryBankTransactionCode": "DEB140"
+    },
+    {
+      "transactionId": "6f703240-fc2c-4556-a265-db4001e19d01",
+      "bookingDate": "2026-04-26",
+      "valueDate": "2026-04-27",
+      "transactionAmount": {
+        "currency": "RSD",
+        "amount": -3516.72
+      },
+      "creditorName": "Wiener Städtische - Osiguranje",
+      "debtorName": null,
+      "remittanceInformationUnstructured": "Wiener Städtische - Osiguranje",
+      "bankTransactionCode": "DEBIT",
+      "category": "insurance",
+      "proprietaryBankTransactionCode": "DEB706"
+    },
+    {
+      "transactionId": "3e15e9d8-0f98-46d9-8cf6-d50374744cd1",
+      "bookingDate": "2026-04-26",
+      "valueDate": "2026-04-26",
+      "transactionAmount": {
+        "currency": "RSD",
+        "amount": -4985.03
+      },
+      "creditorName": "EPS - Struja",
+      "debtorName": null,
+      "remittanceInformationUnstructured": "EPS - Struja",
+      "bankTransactionCode": "DEBIT",
+      "category": "utilities",
+      "proprietaryBankTransactionCode": "DEB818"
+    }
+  ],
+  "new_balance": 882544.31
+}

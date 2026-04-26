@@ -1,0 +1,96 @@
+{
+  "snimak": {
+    "podaci": {
+      "racun": {
+        "identifikator": "c9c223a0-1234-5678-90ab-cdef12345678",
+        "valuta": "RSD",
+        "vrstaRacuna": "Tekući račun",
+        "status": "aktivan",
+        "bic": "DBSSDEFF",
+        "iban": "RS35160000000012345678",
+        "imeTitulara": "Stefan Branković",
+        "proizvod": "Tekući račun - Standard"
+      },
+      "stanja": [
+        {
+          "vrstaStanja": "ocekivano",
+          "iznos": {
+            "valuta": "RSD",
+            "vrednost": 144505.88
+          },
+          "datumPromene": "2026-04-26T00:51:36Z",
+          "referentniDatum": "2026-04-26"
+        },
+        {
+          "vrstaStanja": "raspolozivo",
+          "iznos": {
+            "valuta": "RSD",
+            "vrednost": 143189.59
+          },
+          "datumPromene": "2026-04-26T00:51:36Z"
+        }
+      ]
+    },
+    "veze": {
+      "ovaj": {
+        "putanja": "/v1/racuni/c9c223a0-1234-5678-90ab-cdef12345678/stanja"
+      },
+      "racun": {
+        "putanja": "/v1/racuni/c9c223a0-1234-5678-90ab-cdef12345678"
+      }
+    },
+    "meta": {
+      "ukupnoRezultata": 2,
+      "vremenskaOznaka": "2026-04-26T00:51:36Z",
+      "brojTransakcijaUPeriodu": 3
+    }
+  },
+  "transakcije": [
+    {
+      "identifikatorTransakcije": "ad2b9e98-de1e-4088-b311-9a0ee6c01a17",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -547.89
+      },
+      "nazivPoverioca": "Restoran — poslovni ručak",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "Restoran — poslovni ručak",
+      "kodTransakcije": "ZAD",
+      "kategorija": "ugostiteljstvo",
+      "interniKod": "ZAD285"
+    },
+    {
+      "identifikatorTransakcije": "253d9806-f37d-4cd0-a6a2-e96cf10eab8f",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -3558.88
+      },
+      "nazivPoverioca": "NIS Petrol — gorivo",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "NIS Petrol — gorivo",
+      "kodTransakcije": "ZAD",
+      "kategorija": "gorivo",
+      "interniKod": "ZAD176"
+    },
+    {
+      "identifikatorTransakcije": "9205abb5-fa64-468e-af15-e0be7520abc8",
+      "datumKnjizenja": "2026-04-26",
+      "datumValute": "2026-04-27",
+      "iznos": {
+        "valuta": "RSD",
+        "vrednost": -1387.35
+      },
+      "nazivPoverioca": "Steam — digitalna kupovina",
+      "nazivDuznika": null,
+      "svrhaPlacanja": "Steam — digitalna kupovina",
+      "kodTransakcije": "ZAD",
+      "kategorija": "zabava",
+      "interniKod": "ZAD142"
+    }
+  ],
+  "novo_stanje": 144505.88
+}
