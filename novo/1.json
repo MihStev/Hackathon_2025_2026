@@ -1,0 +1,18 @@
+{
+  "podaci": {
+    "faktura": {
+      "brojFakture": "F-2026-0001",
+      "datumIzdavanja": "2026-04-20",
+      "rokPlacanja": "2026-05-20",
+      "valuta": "RSD",
+      "prodavac": {"naziv": "TehSoft DOO", "pib": "101234567"},
+      "kupac": {"naziv": "Kupac A", "pib": "107654321"},
+      "stavke": [
+        {"opis": "Razvoj AI Modela", "kolicina": 1.0, "cenaPoDingli": 50000.0, "procenatPoreza": 20.0, "ukupno": 60000.0},
+        {"opis": "Konsultacija", "kolicina": 5.0, "cenaPoDingli": 10000.0, "procenatPoreza": 20.0, "ukupno": 60000.0}
+      ],
+      "uslovi": {"neto": 100000.0, "porez": 20000.0, "ukupno": 120000.0}
+    }
+  },
+  "meta": {"format": "UBL-2.1-Simplified", "vremenskaOznaka": "2026-04-20T10:00:00Z"}
+}

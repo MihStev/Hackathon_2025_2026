@@ -1,0 +1,17 @@
+{
+  "podaci": {
+    "faktura": {
+      "brojFakture": "F-2026-0002",
+      "datumIzdavanja": "2026-04-22",
+      "rokPlacanja": "2026-05-22",
+      "valuta": "RSD",
+      "prodavac": {"naziv": "Oblacni Servisi Ltd", "pib": "102345678"},
+      "kupac": {"naziv": "Kupac B", "pib": "108765432"},
+      "stavke": [
+        {"opis": "Oblacno hostovanje - 3 meseca", "kolicina": 3.0, "cenaPoDingli": 15000.0, "procenatPoreza": 20.0, "ukupno": 54000.0}
+      ],
+      "uslovi": {"neto": 45000.0, "porez": 9000.0, "ukupno": 54000.0}
+    }
+  },
+  "meta": {"format": "UBL-2.1-Simplified", "vremenskaOznaka": "2026-04-22T14:30:00Z"}
+}

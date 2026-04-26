@@ -1,0 +1,18 @@
+{
+  "podaci": {
+    "faktura": {
+      "brojFakture": "F-2026-0003",
+      "datumIzdavanja": "2026-04-24",
+      "rokPlacanja": "2026-05-24",
+      "valuta": "RSD",
+      "prodavac": {"naziv": "Analiza Podataka Pro", "pib": "103456789"},
+      "kupac": {"naziv": "Kupac V", "pib": "109876543"},
+      "stavke": [
+        {"opis": "Analiza podataka - K2 2026", "kolicina": 1.0, "cenaPoDingli": 80000.0, "procenatPoreza": 20.0, "ukupno": 96000.0},
+        {"opis": "Izvestaji i preporuke", "kolicina": 4.0, "cenaPoDingli": 5000.0, "procenatPoreza": 20.0, "ukupno": 24000.0}
+      ],
+      "uslovi": {"neto": 85000.0, "porez": 17000.0, "ukupno": 102000.0}
+    }
+  },
+  "meta": {"format": "UBL-2.1-Simplified", "vremenskaOznaka": "2026-04-24T16:45:00Z"}
+}
