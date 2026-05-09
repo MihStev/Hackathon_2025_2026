@@ -1,21 +1,47 @@
-# O Projektu: FinAssist AI (Hackathon MVP)
-Mi pravimo aplikaciju za kompanije gde se na jednom mestu vide svi finansijski podaci. Fokus je na MVP-u za hakaton. Aplikacija mora da radi brzo, bez komplikovanog deploymenta.
+# CLAUDE.md
 
-## Tech Stack
-- Frontend: Streamlit (Python)
-- Baza podataka: SQLite (lokalni fajl database.db)
-- LLM Integracija: Google Cloud Vertex AI (vertexai paket) - za sad koristi mock odgovore dok ne dodamo API ključ.
-- Backend/Podaci: Python skripte koje glume (mockuju) API-je.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Arhitektura & Moduli
-1. *Mock APIs (mock_apis.py)*: Funkcije koje vraćaju lažne JSON podatke za Banku (transakcije) i eFakture.
-2. *Database (db_manager.py)*: Skripta za kreiranje SQLite baze (Zaposleni, Fiksni_Troskovi) i pisanje/čitanje iz nje.
-3. *AI Logic (ai_agent.py)*: Logika koja prima upit, odlučuje da li da vuče iz baze, mock API-ja, ili da odgovori na opšte pitanje.
-4. *App (app.py)*: Streamlit dashboard koji prikazuje grafikone (Cash flow) i UI za chat.
+## Project Overview
 
-## Pravila za pisanje koda (Claude Skills)
-- *KISS (Keep It Simple, Stupid)*: Ovo je hakaton. Ne pravi složene klase i arhitekture. Koristi jednostavne funkcije.
-- *Mockuj pametno*: Generiši smislene test podatke na srpskom jeziku (imena srpskih firmi, valuta RSD, realni iznosi).
-- *Function Calling*: Kada praviš AI agenta, napravi lokalne Python funkcije koje AI može da pozove.
-- *Bezbednost*: Svi API ključevi moraju da se vuku iz .env fajla (koristi python-dotenv). Nikada nemoj hardkodirati ključeve.
-- Pre nego što instaliraš bilo koji paket, pitaj za dozvolu i dodaj ga u requirements.txt.
+**FinAssist AI** is a hackathon MVP for a financial management dashboard targeting Serbian companies. It consolidates bank accounts, invoices, employees, and fixed expenses into a single Streamlit UI with an AI chat assistant. The app runs in Serbian with RSD currency.
+
+## Commands
+
+```bash
+# Run the app
+streamlit run app.py
+
+# Run invoice subsystem tests (from novo/ directory)
+cd novo && python test_azuriranje.py
+
+# Use the invoice CLI helper
+cd novo && python helper.py ucitaj 1.json     # load invoice
+cd novo && python helper.py sve               # list all invoices
+cd novo && python helper.py stats             # analytics
+```
+
+Before installing any package, ask for permission and add it to `requirements.txt`.
+
+## Architecture
+
+The app is split into two subsystems:
+
+**Root-level (main dashboard)** — uses `sqlite3` directly:
+- `mock_apis.py` — mock Berlin Group NextGenPSD2 bank/invoice data (Serbian company names, RSD, Jan–Mar 2025 transactions)
+- `db_manager.py` — SQLite operations for `Zaposleni` (employees) and `Fiksni_Troskovi` (fixed expenses)
+- `ai_agent.py` — keyword-based router (no live LLM calls yet); entry point is `odgovori(upit: str) -> str`; routes: `neplacene_fakture`, `fakture`, `fiksni_troskovi`, `zaposleni`, `transakcije`, `racun`, `opste`
+- `app.py` — Streamlit dashboard with metrics, cash-flow bar chart, transaction/invoice tabs, and chat UI
+
+**`novo/` subsystem** — newer invoice management using SQLAlchemy:
+- Tables: `fakture`, `stavke_fakture`, `bankovni_racuni`, `stanja_racuna`
+- JSON format: UBL-2.1-Simplified; UPSERT logic deletes old line items before re-inserting
+- Has its own `.venv/` and `database.db`
+
+## Key Conventions
+
+- **KISS:** No complex classes or abstractions — plain functions only. This is a hackathon.
+- **Mock data:** Use Serbian company names, RSD currency, realistic amounts when adding test data.
+- **Secrets:** All API keys via `.env` + `python-dotenv`. Never hardcode.
+- **LLM:** Vertex AI (`google-cloud-vertexai`) is wired in but currently returns mock responses. Real calls go through `ai_agent.py`.
+- **Language:** All UI text, comments, and variable names are in Serbian (mixed Cyrillic/Latin).
